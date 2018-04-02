@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Cari</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/datatables.min.css" />
+    <link rel="stylesheet" href="/css/selectize.css" />
+    <script src="/js/datatables.min.js"></script>
+    <script src="/js/selectize.js"></script>
+</head>
+<body>
+<div th:replace="fragments/fragment :: header"></div>
+<div class="col-md-8">
+    <form action="/mahasiswa/cari" method="get">
+        <div class="row">
+            <h3 class="page-header">Cari Mahasiswa</h3>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <strong>Universitas</strong>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5">
+                <select name="univ" id="univ"></select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <strong>Fakultas</strong>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5">
+                <select name="fakultas" id="fakultas"></select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <strong>Program Studi</strong>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5">
+                <select name="prodi" id="prodi"></select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <button type="submit" class="btn btn-default">Lihat</button>
+            </div>
+        </div>
+    </form>
+</div>
+<script src="/js/cari-mahasiswa.js"></script>
+</body>
+</html>

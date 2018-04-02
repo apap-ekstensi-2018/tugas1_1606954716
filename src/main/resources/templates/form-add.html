@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Add student</title>
+	<link rel="stylesheet" href="/css/bootstrap.min.css" />
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="/css/datatables.min.css" />
+	<link rel="stylesheet" href="/css/selectize.css" />
+    <link rel="stylesheet" href="/css/bootstrap-datepicker3.standalone.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+	<script src="/js/datatables.min.js"></script>
+	<script src="/js/selectize.js"></script>
+	<script src="/js/bootstrap-datepicker.min.js"></script>
+    <script src="/js/jquery.validate.min.js"></script>
+
+</head>
+
+<body>
+
+<div th:replace="fragments/fragment :: header"></div>
+<h1 class="page-header">Tambah Mahasiswa</h1>
+
+<div class="col-md-11">
+
+    <form action="/mahasiswa/tambah/submit" method="post" id="formAdd">
+        <div class="form-control">
+            <div class="form-group">
+                <div class="col-md-2">
+                    <strong>Nama Lengkap</strong>
+                </div>
+                <div class="col-md-4">
+                    <input type="text" class="form-control" id="nama" name="nama" required="required" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-2">
+                    <strong>Tempat Lahir</strong>
+                </div>
+                <div class="col-md-4">
+                    <input type="text" class="form-control" id="tempat_lahir" name="tempat_lahir" required="required" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-2">
+                    <strong>Tanggal Lahir</strong>
+                </div>
+                <div class="col-md-4" id="tgllahir_parent">
+                    <input type="text" class="form-control" name="tanggal_lahir" id="tanggal_lahir" required="required"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-2">
+                    <strong>Jenis Kelamin</strong>
+                </div>
+                <div class="col-md-4" id="jenkel_parent">
+                    <select id="jenis_kelamin" name="jenis_kelamin" ></select>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-2">
+                    <strong>Agama</strong>
+                </div>
+                <div class="col-md-4" id="agama_parent">
+                    <select name="agama" id="agama"></select>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-2">
+                    <strong>Golongan Darah</strong>
+                </div>
+                <div class="col-md-4" id="goldar_parent">
+                    <select name="golongan_darah" id="golongan_darah" ></select>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-2">
+                    <strong>Tahun Masuk</strong>
+                </div>
+                <div class="col-md-4" id="thnmsk_parent">
+                    <input type="text" class="form-control" name="tahun_masuk" id="tahun_masuk" required="required"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-2">
+                    <strong>Jalur Masuk</strong>
+                </div>
+                <div class="col-md-4" id="jamas_parent">
+                    <select name="jalur_masuk" id="jalur_masuk"></select>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-2">
+                    <strong>Program Studi</strong>
+                </div>
+                <div class="col-md-4" id="prodi_parent">
+                    <select name="id_prodi" id="id_prodi"></select>
+                </div>
+            </div>
+
+            <div>
+                <button type="submit" name="action" value="save" class="btn btn-default">Simpan</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+	<script src="/js/form-update.js"></script>
+</body>
+</html>
+<!--<script type="text/javascript">-->
+	<!--console.log($('form').serialize());-->
+<!--</script>-->

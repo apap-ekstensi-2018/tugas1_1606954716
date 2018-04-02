@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Fragment</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/dashboard.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/font-awesome.css" />
+    <link rel="stylesheet" href="/css/bootstrap-responsive.min.css" />
+    <link rel="stylesheet" href="/css/datatables.min.css" />
+</head>
+<body>
+    <div th:fragment="header">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="/">SI Kemahasiswaan</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="nav navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/mahasiswa/tambah">Tambah Mahasiswa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/kelulusan">Kelulusan Mahasiswa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/mahasiswa/cari">Cari Mahasiswa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/mahasiswa/usia">Usia</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <div th:fragment="footer">
+        <hr/>
+        <h7>Mata Kuliah APAP</h7>
+    </div>
+</body>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/datatables.min.js"></script>
+<script src="/js/data.js"></script>
+<script src="/js/base.js"></script>
+</html>

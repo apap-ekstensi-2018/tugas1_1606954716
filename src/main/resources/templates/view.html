@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>View Student by NPM</title>
+        <link rel="stylesheet" href="/css/bootstrap.min.css" />
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="/css/datatables.min.css" />
+        <script src="/js/datatables.min.js"></script>
+        <script src="/js/data.js"></script>
+    </head>
+    <body>
+    <div th:replace="fragments/fragment :: header"></div>
+    <div class="form-control">
+        <h3 th:text="'Lihat Data Mahasiswa - '+ ${student.npm}"></h3>
+        <div class="row">
+            <div class="col-md-2">
+                <strong>NPM</strong>
+            </div>
+            <div class="col-md-6">
+                <label th:text="${student.npm}">Student NPM</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <strong>Nama</strong>
+            </div>
+            <div class="col-md-6">
+                <label th:text="${student.nama}"></label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <strong>Tempat/Tanggal Lahir</strong>
+            </div>
+            <div class="col-md-6">
+                <label th:text="${student.tempat_lahir} + ' ' + ${student.tanggal_lahir}"></label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <strong>Program Studi</strong>
+            </div>
+            <div class="col-md-6">
+                <label th:text="${studyProgram.nama_prodi}">Student Name</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <strong>Fakultas</strong>
+            </div>
+            <div class="col-md-6">
+                <label th:text="${faculty.nama_fakultas}">Fakultas</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <strong>Universitas</strong>
+            </div>
+            <div class="col-md-6">
+                <label th:text="${university.nama_univ}">Universitas</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <strong>Jenis Kelamin</strong>
+            </div>
+            <div class="col-md-6">
+                <label th:text="${student.jenis_kelamin} == 1 ? 'Laki - Laki' : 'Perempuan'">Jenis Kelamin</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <strong>Agama</strong>
+            </div>
+            <div class="col-md-6">
+                <label th:text="${student.agama}">agama</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <strong>Golongan Darah</strong>
+            </div>
+            <div class="col-md-6">
+                <label th:text="${student.golongan_darah}">Golongan Darah</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <strong>Tahun Masuk</strong>
+            </div>
+            <div class="col-md-6">
+                <label th:text="${student.tahun_masuk}">Tahun Masuk</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <strong>Jalur Masuk</strong>
+            </div>
+            <div class="col-md-6">
+                <label th:text="${student.jalur_masuk}">Jalur Masuk</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <strong>Status</strong>
+            </div>
+            <div class="col-md-6">
+                <label th:text="${student.status}">Status</label>&nbsp;&nbsp;
+                <a th:href="'/mahasiswa/lulus/' + ${student.npm}" type="button" class="btn btn-sm btn-success">Lulus</a>&nbsp;
+                <a th:href="'/mahasiswa/nonaktif/' + ${student.npm}" type="button" class="btn btn-sm btn-danger">Non-aktifkan</a>&nbsp;
+            </div>
+        </div>
+    </div>
+    <div th:replace="fragments/fragment :: footer"></div>
+    </body>
+</html>
+

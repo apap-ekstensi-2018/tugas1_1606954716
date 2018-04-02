@@ -1,0 +1,6 @@
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sing_paling`(in thn varchar(4),in prodi int)
+BEGIN
+	(select *,'tuwo' as sing_paling from mahasiswa where tahun_masuk=thn and id_prodi = prodi order by tanggal_lahir asc limit 1)
+    union all
+    (select *,'enom' as sing_paling from mahasiswa where tahun_masuk=thn and id_prodi = prodi order by tanggal_lahir desc limit 1);
+END

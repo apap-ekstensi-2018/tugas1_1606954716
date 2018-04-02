@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Update student</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/datatables.min.css" />
+    <link rel="stylesheet" href="/css/selectize.css" />
+    <link rel="stylesheet" href="/css/bootstrap-datepicker3.standalone.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <script src="/js/datatables.min.js"></script>
+    <script src="/js/selectize.js"></script>
+    <script src="/js/bootstrap-datepicker.min.js"></script>
+    <script src="/js/jquery.validate.min.js"></script>
+</head>
+
+<body>
+
+<div th:replace="fragments/fragment :: header"></div>
+<h1 class="page-header">Ubah Data Mahasiswa</h1>
+<div class="col-md-11">
+
+    <form th:action="'/mahasiswa/ubah/' + ${student.npm}" th:object="${student}" method="post" id="formUpdate">
+        <input type="hidden" id="hidden_jenis_kelamin" th:value="${student.jenis_kelamin}" />
+        <input type="hidden" id="hidden_agama" th:value="${student.agama}" />
+        <input type="hidden" id="hidden_golongan_darah" th:value="${student.golongan_darah}" />
+        <input type="hidden" id="hidden_jalur_masuk" th:value="${student.jalur_masuk}" />
+        <input type="hidden" id="hidden_id_prodi" th:value="${student.id_prodi}" />
+        <div class="form-control">
+            <input type="hidden" name="npm" th:field="${student.npm}"/>
+            <input type="hidden" name="status" th:field="${student.status}"/>
+            <div class="form-group">
+                <div class="col-md-2">
+                    <strong>Nama Lengkap</strong>
+                </div>
+                <div class="col-md-4">
+                    <input type="text" class="form-control" name="nama" th:field="${student.nama}"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-2">
+                    <strong>Tempat Lahir</strong>
+                </div>
+                <div class="col-md-4">
+                    <input type="text" class="form-control" name="tempat_lahir" th:field="${student.tempat_lahir}"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-2">
+                    <strong>Tanggal Lahir</strong>
+                </div>
+                <div class="col-md-4" id="tgllahir_parent">
+                    <input type="text" class="form-control" name="tanggal_lahir" id="tanggal_lahir" th:field="${student.tanggal_lahir}"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-2">
+                    <strong>Jenis Kelamin</strong>
+                </div>
+                <div class="col-md-4" id="jenkel_parent">
+                    <select id="jenis_kelamin" name="jenis_kelamin"></select>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-2">
+                    <strong>Agama</strong>
+                </div>
+                <div class="col-md-4" id="agama_parent">
+                    <select name="agama" id="agama"></select>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-2">
+                    <strong>Golongan Darah</strong>
+                </div>
+                <div class="col-md-4" id="goldar_parent">
+                    <select id="golongan_darah" name="golongan_darah"></select>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-2">
+                    <strong>Tahun Masuk</strong>
+                </div>
+                <div class="col-md-4" id="thnmsk_parent">
+                    <input type="text" class="form-control" id="tahun_masuk" name="tahun_masuk" th:field="${student.tahun_masuk}"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-2">
+                    <strong>Jalur Masuk</strong>
+                </div>
+                <div class="col-md-4" id="jamas_parent">
+                    <select id="jalur_masuk" name="jalur_masuk"></select>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-2">
+                    <strong>Program Studi</strong>
+                </div>
+                <div class="col-md-4" id="prodi_parent">
+                    <select name="id_prodi" id="id_prodi"></select>
+                </div>
+            </div>
+
+            <div>
+                <button type="submit" name="action" value="save" class="btn btn-default">Simpan</button>
+            </div>
+        </div>
+    </form>
+</div>
+<div th:replace="fragments/fragment :: footer"></div>
+<script src="/js/form-update.js"></script>
+</body>
+</html>
+

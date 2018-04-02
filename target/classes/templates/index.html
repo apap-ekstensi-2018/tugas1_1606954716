@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Index</title>
+	<link rel="stylesheet" href="/css/bootstrap.min.css" />
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="/css/datatables.min.css" />
+	<script src="/js/datatables.min.js"></script>
+	<script src="/js/data.js"></script>
+</head>
+<body>
+<div th:replace="fragments/fragment :: header"></div>
+<div class="col-md-12">
+	<h2>Sistem Informasi Kemahasiswaan</h2>
+	<h4>Selamat datang di Sistem Informasi Kemahasiswaan</h4>
+	<hr/>
+	<h2>Lihat Data Mahasiswa Berdasarkan NPM</h2>
+	<h4>Masukan Nomor Pokok Mahasiswa</h4>
+	<form id="cariMahasiswa">
+		<div class="row">
+			<div class="col-md-4">
+				<div class="alert alert-warning alert-dismissible fade show" role="alert">
+					NPM Tidak Boleh Kosong
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3">
+				<div class="input-group mb-3">
+					<input type="text" class="form-control" id="npm" name="npm"/>
+					<div class="input-group-append">
+						<button class="btn btn-outline-secondary" type="submit">Lihat</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+<div th:replace="fragments/fragment :: footer"></div>
+</body>
+</html>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(".alert").hide();
+		$("#cariMahasiswa").on("submit",function(e){
+			e.preventDefault();
+			if($("input[name='npm']").val() == "" || $("input[name='npm']").val() == null){
+				$(".alert").show();
+			}else{
+				var data = '/mahasiswa?npm='+$("input[name='npm']").val()
+				$.ajax({
+					url: data,
+					success:function(){
+						window.location.href = data;
+					}
+				});
+			}
+		});
+	});
+</script>

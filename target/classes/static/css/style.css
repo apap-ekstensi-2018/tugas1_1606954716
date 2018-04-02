@@ -1,0 +1,30 @@
+a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    text-decoration: none;
+    color: initial;
+}
+
+#cariMahasiswa{
+
+}
+
+.col-md-12{
+    margin:20px;
+}
+
+#formAdd > .form-control > .form-group{
+    margin-top:15px;
+    margin-bottom:15px;
+}
+
+#formUpdate > .form-control > .row{
+    margin-top:15px;
+    margin-bottom:15px;
+}
+
+form{
+
+}
